@@ -6,10 +6,18 @@ body {
 }
 
 .sky-wrapper {
-  width: 2000px;
-  height: 1200px;
-  position: absolute;
-  background: linear-gradient(0deg, tan 40%, aqua 50%, transparent 75%);
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background: rgba(255, 148, 0, 0.5);
+}
+
+.sky {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(0deg, transparent 10%, orange 30%, violet);
+  animation: sky-set 16s linear 3s infinite;
 }
 
 .sun {
@@ -19,25 +27,22 @@ body {
   background: radial-gradient(orange 15%, red 25%, yellow 80%);
   opacity: 70%;
   margin: 0 auto;
+  display: flex;
+  align-content: flex-end;
   position: relative;
-  top: 150px;
-  -webkit-box-reflect: below 35px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  animation: sunset 16s linear 3s infinite;
 }
 
-.sky {
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(0deg, transparent 10%, orange 30%, violet);
-}
-
-.cloud-1 .circle-1 {
+.circle-1 {
   width: 300px;
   height: 200px;
   border-radius: 50% 50%;
+  position: absolute;
   background: #f2eeee;
+  animation: circle-1 16s linear 3s infinite;
 }
 
-.cloud-1 .circle-2 {
+.circle-2 {
   width: 200px;
   height: 250px;
   border-radius: 50% 50%;
@@ -45,143 +50,292 @@ body {
   position: absolute;
   top: 10px;
   left: 100px;
+  animation: circle-2 16s linear 3s infinite;
 }
 
-.cloud-1 .circle-3 {
+.circle-3 {
   width: 100px;
   height: 125px;
   border-radius: 50% 50%;
   background: #f9f9f9;
   position: absolute;
   top: -15px;
-}
-.cloud-1 .circle-4 {
-  width: 100px;
-  height: 125px;
-  border-radius: 50% 50%;
-  background: #f9f9f9;
-  position: absolute;
-  top: 0;
-  left: 250px;
+  animation: circle-3 16s linear 3s infinite;
 }
 
 .cloud-1 {
-  position: absolute;
-  top: 100px;
+  position: relative;
+  bottom: 195px;
   width: 250px;
   height: 400px;
   -webkit-box-reflect: right;
-  opacity: 70%;
-}
-
-.cloud-2 .circle-5 {
-  width: 300px;
-  height: 200px;
-  border-radius: 50% 50%;
-  background: #f2eeee;
-}
-
-.cloud-2 .circle-6 {
-  width: 200px;
-  height: 250px;
-  border-radius: 50% 50%;
-  background: #f5f5f5;
-  position: absolute;
-  top: 10px;
-  left: 100px;
-}
-
-.cloud-2 .circle-7 {
-  width: 100px;
-  height: 125px;
-  border-radius: 50% 50%;
-  background: #f9f9f9;
-  position: absolute;
-  top: 10px;
-  left: 50px;
-}
-.cloud-2 .circle-8 {
-  width: 100px;
-  height: 125px;
-  border-radius: 50% 50%;
-  background: #f9f9f9;
-  position: absolute;
-  top: -50px;
-  left: 250px;
+  opacity: 40%;
+  animation: cloud-1 16s linear 3s infinite;
 }
 
 .cloud-2 {
-  position: absolute;
-  top: 100px;
-  right: 300px;
+  position: relative;
+  bottom: 750px;
+  left: 800px;
   width: 250px;
   height: 200px;
   -webkit-box-reflect: right;
-  opacity: 70%;
-}
-
-.cloud-3 .circle-9 {
-  width: 300px;
-  height: 200px;
-  border-radius: 50% 50%;
-  background: #f2eeee;
-  position: absolute;
-  top: 50px;
-}
-
-.cloud-3 .circle-10 {
-  width: 200px;
-  height: 250px;
-  border-radius: 50% 50%;
-  background: #f5f5f5;
-  position: absolute;
-  top: 10px;
-  left: 100px;
-}
-
-.cloud-3 .circle-11 {
-  width: 100px;
-  height: 125px;
-  border-radius: 50% 50%;
-  background: #f9f9f9;
-  position: absolute;
-  top: 10px;
-  left: 50px;
-}
-.cloud-3 .circle-12 {
-  width: 100px;
-  height: 125px;
-  border-radius: 50% 50%;
-  background: #f9f9f9;
-  position: absolute;
-  top: -50px;
-  left: 250px;
+  opacity: 50%;
+  animation: cloud-2 16s linear 3s infinite;
 }
 
 .cloud-3 {
-  position: absolute;
-  top: 175px;
-  left: 800px;
+  position: relative;
+  bottom: 900px;
+  left: 1650px;
   width: 250px;
   height: 400px;
   -webkit-box-reflect: right;
-  opacity: 70%;
+  opacity: 45%;
+  animation: cloud-3 16s linear 3s infinite;
+}
+
+.ocean-wrapper {
+  background: rgba(0, 100, 100, 0.1);
+}
+
+.ocean {
+  width: 100%;
+  height: 650px;
+  background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 25%, transparent 100%);
+  filter: hue-rotate(-16deg);
+  overflow: hidden;
+  animation: ocean-set 16s linear 3s infinite;
+}
+
+.ocean .sun {
+  opacity: 50%;
+  animation: sunrise 16s linear 3s infinite backwards;
+}
+
+.beach-wrapper {
+  width: 2000px;
+  height: 400px;
+  animation: beach-down 2s linear 3s infinite;
+}
+
+.beach {
+  display: flex;
+  width: 2000px;
+  height: 1000px;
+  background: linear-gradient(0deg, tan 80%, transparent 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.towel-wrapper{
+  position: absolute;
+  margin: 200px 100px 100px 100px;
+  display: flex;
+  width: 1800px;
+  justify-content: space-around;
+}
+
+.towel-1 {
+  border-bottom: 225px solid blue;
+  border-left: 105px solid transparent;
+  border-right: 200px solid transparent;
+  height: 0;
+  width: 150px;
+  border-radius: 30px;
+  transform: skewX(-25deg);
+  filter: blur(5px);
+}
+
+.towel-2 {
+  border-bottom: 225px solid red;
+  border-left: 105px solid transparent;
+  border-right: 200px solid transparent;
+  height: 0;
+  width: 150px;
+  border-radius: 30px;
+  transform: skewX(25deg);
+  filter: blur(5px);
 }
 
 .table {
   display: flex;
   align-items: flex-end;
   width: 1000px;
-  height: 350px;
+  height: 500px;
   border-radius: 75px 75px 0 0;
   background: #985d5d;
   margin: 0 auto;
   position: relative;
-  top: 350px;
-  z-index: 150;
-  overflow: hidden;
+  top: 500px;
+  z-index: 0;
 }
 
+.arm {
+  width: 275px;
+  height: 100px;
+  border-radius: 50% 10px 10% 10%;
+}
+
+.arm-1 {
+  display: flex;
+  align-content: flex-start;
+  width: 300px;
+  height: 100px;
+  margin-left: 10px;
+}
+
+.arm-1 .arm {
+  background: #714343;
+  rotate: 315deg;
+}
+
+.hand-1 {
+  display: block;
+  background: #714343;
+  width: 100px;
+  height: 110px;
+  border-radius: 25% 10%;
+  position: absolute;
+  left: 215px;
+  bottom: 100px;
+  animation: wave-1 5s alternate 3s infinite;
+}
+
+.thumb-1 {
+  width: 25px;
+  height: 73px;
+  background: #714343;
+  position: relative;
+  left: 55px;
+  bottom: -84px;
+  border-radius: 30px 30px 0 0;
+  rotate: 125deg;
+}
+
+.index-1 {
+  width: 25px;
+  height: 120px;
+  background: #714343;
+  position: absolute;
+  left: 115px;
+  bottom: -45px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.middle-1 {
+  width: 25px;
+  height: 125px;
+  background: #714343;
+  position: absolute;
+  left: 140px;
+  bottom: -20px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.ring-1 {
+  width: 25px;
+  height: 120px;
+  background: #714343;
+  position: absolute;
+  left: 137px;
+  bottom: 10px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.pinky-1 {
+  width: 25px;
+  height: 75px;
+  background: #714343;
+  position: absolute;
+  left: 111px;
+  bottom: 60px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.arm-2 {
+  display: flex;
+  align-content: flex-start;
+  width: 305px;
+  height: 115px;
+  margin-left: 400px;
+}
+
+.arm-2 .arm {
+  background: #e2d1a2;
+  rotate: 235deg;
+}
+
+.hand-2 {
+  display: block;
+  background: #e2d1a2;
+  width: 102px;
+  height: 110px;
+  border-radius: 25% 10%;
+  position: absolute;
+  left: 685px;
+  bottom: 120px;
+  animation: wave-2 5s alternate 3s infinite;
+}
+
+.thumb-2 {
+  width: 25px;
+  height: 75px;
+  background: #e2d1a2;
+  position: relative;
+  left: 55px;
+  bottom: 50px;
+  border-radius: 30px 30px 0 0;
+  rotate: 45deg;
+}
+
+.index-2 {
+  width: 25px;
+  height: 112px;
+  background: #e2d1a2;
+  position: absolute;
+  left: 122px;
+  bottom: 40px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.middle-2 {
+  width: 25px;
+  height: 125px;
+  background: #e2d1a2;
+  position: absolute;
+  left: 140px;
+  bottom: 6px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.ring-2 {
+  width: 25px;
+  height: 100px;
+  background: #e2d1a2;
+  position: absolute;
+  left: 135px;
+  bottom: -9px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
+
+.pinky-2 {
+  width: 25px;
+  height: 90px;
+  background: #e2d1a2;
+  position: absolute;
+  left: 110px;
+  bottom: -30px;
+  border-radius: 30px 30px 0 0;
+  rotate: 90deg;
+}
 .ashtray {
   width: 100px;
   height: 100px;
@@ -202,6 +356,15 @@ body {
   box-shadow: inset 0 0 10px 5px green;
 }
 
+.ash {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: grey;
+  position: absolute;
+  bottom: 40px;
+  left: 58px;
+}
 
 .joint {
   width: 15px;
@@ -212,16 +375,16 @@ body {
   position: absolute;
   left: 13px;
   top: 44px;
-  rotate: 45deg
+  rotate: 45deg;
 }
 
 .cherry {
   width: 15px;
-  height: 5px;
+  height: 15px;
   background: red;
   margin: auto;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 5px 5px 55% 50%;
+  animation: cherry 5s alternate 3s infinite;
 }
 
 .filter {
@@ -231,181 +394,250 @@ body {
   margin-top: 50px;
 }
 
-.ash {
-  width: 20px;
-  height: 20px;
+.smoke-wrapper {
+  width: 50px;
+  height: 300px;
+  position: absolute;
+  bottom: -58px;
+  left: 35px;
+  display: grid;
+  grid-template-rows: repeat(4, 30px);
+  gap: 0;
+  opacity: 49%;
+}
+
+.smoke-1 {
+  width: 25px;
+  height: 190px;
   border-radius: 50%;
-  background: grey;
-  position: absolute;
-  bottom: 40px;
-  left: 58px;
-}
-.arm-1 .arm {
-  background: #714343;
-  width: 265px;
-  height: 100px;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  rotate: 315deg;
-}
-.arm-1 {
-  display: flex;
-  align-content: flex-start;
-  width: 300px;
-  height: 100px;
-  margin-left: 10px;
+  background: radial-gradient(gray 20%, transparent 100%);
+  animation: smoke-1 1s alternate 3s infinite;
 }
 
-.arm-2 .arm {
-  background: #e2d1a2;
-  width: 275px;
-  height: 100px;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  rotate: 235deg;
-}
-.arm-2 {
-  display: flex;
-  align-content: flex-start;
-  width: 300px;
-  height: 100px;
-  margin-left: 400px;
-}
-
-.hand-1 {
-  display: block;
-  background: #714343;
-  width: 100px;
-  height: 110px;
-  border-radius: 25% 10%;
-  position: absolute;
-  left: 190px;
-  bottom: 100px;
-  transform: rotate(315deg);
-}
-
-.thumb-1 {
+.smoke-2 {
   width: 25px;
-  height: 75px;
-  background: #714343;
-  position: relative;
-  left: 55px;
-  bottom: 50px;
-  border-radius: 30px 30px 0 0;
-  rotate: 40deg;
+  height: 150px;
+  border-radius: 50%;
+  background: gray;
+  background: radial-gradient(gray 20%, transparent 100%);
+  animation: smoke-2 1s alternate 3s infinite;
 }
 
-.index-1 {
-  width: 25px;
-  height: 80px;
-  background: #714343;
-  position: absolute;
-  left: 123px;
-  bottom: 55px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
-}
-
-.middle-1 {
+.smoke-3 {
   width: 25px;
   height: 125px;
-  background: #714343;
-  position: absolute;
-  left: 140px;
-  bottom: 6px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
+  border-radius: 50%;
+  background: gray;
+  background: radial-gradient(gray 20%, transparent 100%);
+  animation: smoke-3 1s alternate 3s infinite;
 }
 
-.ring-1 {
-  width: 25px;
-  height: 120px;
-  background: #714343;
-  position: absolute;
-  left: 135px;
-  bottom: -17px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
-}
-
-.pinky-1 {
-  width: 25px;
-  height: 75px;
-  background: #714343;
-  position: absolute;
-  left: 108px;
-  bottom: -23px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
-}
-
-.hand-2 {
-  display: block;
-  background: #e2d1a2;
-  width: 100px;
-  height: 110px;
-  border-radius: 25% 10%;
-  position: absolute;
-  left: 705px;
-  bottom: 118px;
-  transform: rotate(225deg);
-}
-
-.thumb-2 {
-  width: 25px;
-  height: 75px;
-  background: #e2d1a2;
-  position: relative;
-  left: 55px;
-  bottom: 50px;
-  border-radius: 30px 30px 0 0;
-  rotate: 40deg;
-}
-
-.index-2 {
-  width: 25px;
-  height: 80px;
-  background: #e2d1a2;
-  position: absolute;
-  left: 123px;
-  bottom: 55px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
-}
-
-.middle-2 {
+.smoke-4 {
   width: 25px;
   height: 125px;
-  background: #e2d1a2;
-  position: absolute;
-  left: 140px;
-  bottom: 6px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
+  border-radius: 50%;
+  background: gray;
+  background: radial-gradient(gray 20%, transparent 100%);
+  animation: smoke-4 1s alternate 3s infinite;
+}
+.smoke-5 {
+  width: 25px;
+  height: 100px;
+  border-radius: 50%;
+  background: gray;
+  background: radial-gradient(gray 20%, transparent 100%);
+  animation: smoke-4 1s alternate 3s infinite;
+}
+@keyframes circle-1 {
+  100% {
+    background: #d4c4b3;
+  }
+}
+@keyframes circle-2 {
+  100% {
+    background: #dbcee1;
+  }
+}
+@keyframes circle-3 {
+  100% {
+    background: #868686;
+  }
+}
+@keyframes cloud-1 {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 250px;
+    bottom: 150px;
+    opacity: 70%;
+  }
+}
+@keyframes cloud-2 {
+  0% {
+    left: 300px;
+  }
+  100% {
+    left: 500px;
+    bottom: 612px;
+    opacity: 75%;
+  }
+}
+@keyframes cloud-3 {
+  0% {
+    left: 1400px;
+  }
+  100% {
+    left: 1000px;
+    bottom: 800px;
+    opacity: 80%;
+  }
+}
+@keyframes sunset {
+  0% {
+    top: 0;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(-30deg);
+  }
+  75% {
+    filter: hue-rotate(-45deg);
+  }
+  100% {
+    top: 500px;
+    filter: hue-rotate(-60deg);
+  }
 }
 
-.ring-2 {
-  width: 25px;
-  height: 120px;
-  background: #e2d1a2;
-  position: absolute;
-  left: 135px;
-  bottom: -17px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
+@keyframes sunrise {
+  0% {
+    top: 300px;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(-30deg);
+  }
+  75% {
+    filter: hue-rotate(-46deg);
+  }
+  100% {
+    top: -250px;
+    filter: hue-rotate(-60deg);
+  }
+}
+@keyframes beach-down {
+  0% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.6) 10%, transparent 70%);
+  }
+  50% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.75) 20%, transparent 75%);
+  }
+  100% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.9) 30%, transparent 90%);
+  }
+}
+@keyframes sky-set {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-30deg);
+  }
 }
 
-.pinky-2 {
-  width: 25px;
-  height: 75px;
-  background: #e2d1a2;
-  position: absolute;
-  left: 108px;
-  bottom: -23px;
-  border-radius: 30px 30px 0 0;
-  rotate: 90deg
+@keyframes ocean-set {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(-45deg);
+  }
+}
+
+@keyframes wave-1 {
+  0% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    border-bottom-left-radius: 50%;
+  }
+}
+@keyframes wave-2 {
+  0% {
+    transform: rotate(200deg);
+  }
+  100% {
+    transform: rotate(215deg);
+    border-bottom-right-radius: 40%;
+  }
+}
+@keyframes smoke-1 {
+  0% {
+    left: 20px;
+    opacity: 10%;
+    border-radius: 50% 100%;
+  }
+  100% {
+    left: 0;
+    opacity: 40%;
+    border-radius: 50% 0%;
+  }
+}
+
+@keyframes smoke-2 {
+  0% {
+    opacity: 30%;
+    border-radius: 50% 1000%;
+  }
+  100% {
+    opacity: 70%;
+    border-radius: 50% 0%;
+  }
+}
+
+@keyframes smoke-3 {
+  0% {
+    opacity: 85%;
+    border-radius: 50% 0%;
+  }
+  100% {
+    opacity: 50%;
+    border-radius: 50% 1000%;
+  }
+}
+
+@keyframes smoke-4 {
+  0% {
+    opacity: 100%;
+    border-radius: 50% 1000%;
+  }
+  100% {
+    opacity: 80%;
+    border-radius: 50% 0%;
+  }
+}
+
+@keyframes smoke-5 {
+  0% {
+    opacity: 85%;
+    border-radius: 50% 0%;
+  }
+  100% {
+    opacity: 50%;
+    border-radius: 50% 1000%;
+  }
+}
+
+@keyframes cherry {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
