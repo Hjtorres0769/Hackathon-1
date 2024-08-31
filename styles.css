@@ -100,7 +100,6 @@ body {
 }
 
 .ocean .sun {
-  opacity: 50%;
   animation: sunrise 16s linear 3s infinite backwards;
 }
 
@@ -465,6 +464,7 @@ body {
 
 @keyframes sunrise {
   0% {
+    opacity: 0%;
     top: 300px;
     filter: hue-rotate(0deg);
   }
@@ -475,6 +475,7 @@ body {
     filter: hue-rotate(-45deg);
   }
   100% {
+    opacity: 70%;
     top: -250px;
     filter: hue-rotate(-60deg);
   }
