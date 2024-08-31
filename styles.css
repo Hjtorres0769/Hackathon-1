@@ -12,7 +12,6 @@ body {
 }
 
 .sky {
-  display: flex;
   width: 2000px;
   height: 500px;
   background: linear-gradient(0deg, transparent 10%, orange 30%, violet);
@@ -32,12 +31,6 @@ body {
   animation: sunset 16s linear 3s infinite;
 }
 
-.cloud-wrapper {
-  display: block;
-  width: 2000px;
-  height: 500px;
-}
-
 .cloud {
   position: relative;
   bottom: 195px;
@@ -49,10 +42,8 @@ body {
 }
 
 .cloud:nth-last-of-type(2) {
-  position: relative;
   bottom: 750px;
   left: 800px;
-  width: 250px;
   height: 200px;
   -webkit-box-reflect: right;
   opacity: 50%;
@@ -60,11 +51,8 @@ body {
 }
 
 .cloud:last-of-type {
-  position: relative;
   bottom: 900px;
   left: 1650px;
-  width: 250px;
-  height: 400px;
   -webkit-box-reflect: right;
   opacity: 45%;
   animation: cloud-3 16s linear 3s infinite;
@@ -72,7 +60,7 @@ body {
 
 .circle {
   width: 300px;
-  height: 199px;
+  height: 200px;
   border-radius: 50% 50%;
   position: absolute;
   background: #f2eeee;
@@ -98,12 +86,13 @@ body {
 
 .ocean-wrapper {
   width: 2000px;
+  height: 650px;
   background: rgba(0, 100, 100, 0.1);
 }
 
 .ocean {
-  width: 2000px;
-  height: 650px;
+  width: inherit;
+  height: inherit;
   background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 25%, transparent 100%);
   filter: hue-rotate(-16deg);
   overflow: hidden;
@@ -117,16 +106,14 @@ body {
 
 .beach-wrapper {
   width: 2000px;
-  height: 400px;
-  animation: tide 2s linear 3s infinite;
+  height: 500px;
+  animation: tide 2s ease-in-out 5s infinite;
 }
 
 .beach {
-  display: flex;
-  width: 100%;
+  width: inherit;
   height: 1000px;
   background: linear-gradient(0deg, tan 80%, transparent 100%);
-  z-index: -1;
   overflow: hidden;
 }
 
@@ -164,20 +151,11 @@ body {
   margin: 0 auto;
   position: relative;
   top: 500px;
-  z-index: 0;
 }
 
 .arm {
-  width: 275px;
-  height: 100px;
+  height: 105px;
   border-radius: 50% 10px 10% 10%;
-}
-
-.hand {
-  display: block;
-  width: 100px;
-  height: 110px;
-  border-radius: 25% 10%;
 }
 
 .finger {
@@ -199,15 +177,20 @@ body {
 }
 
 .darryl .arm {
+  width: 350px;
+  height: 115px;
   background: #714343;
   rotate: 315deg;
 }
 
 .darryl .hand {
   background: #714343;
+  border-radius: 30% 30%;
+  width: 150px;
+  height: 130px;
   position: absolute;
-  left: 215px;
-  bottom: 100px;
+  left: 255px;
+  bottom: 150px;
   animation: wave-1 5s alternate 3s infinite;
 }
 
@@ -215,8 +198,8 @@ body {
   height: 75px;
   background: #714343;
   position: relative;
-  left: 55px;
-  bottom: -84px;
+  left: 75px;
+  bottom: -100px;
   rotate: 125deg;
 }
 
@@ -224,7 +207,7 @@ body {
   height: 120px;
   background: #714343;
   position: absolute;
-  left: 115px;
+  left: 140px;
   bottom: -45px;
 }
 
@@ -232,41 +215,46 @@ body {
   height: 125px;
   background: #714343;
   left: 145px;
-  bottom: -20px;
+  bottom: -13px;
 }
 
 .darryl .ring {
-  height: 120px;
+  height: 125px;
   background: #714343;
-  left: 137px;
-  bottom: 10px;
+  left: 150px;
+  bottom: 20px;
 }
 
 .darryl .pinky {
-  height: 75px;
+  height: 80px;
   background: #714343;
-  left: 111px;
-  bottom: 60px;
+  left: 142px;
+  bottom: 75px;
 }
 
 .hunter {
   display: flex;
   align-content: flex-start;
-  width: 305px;
-  height: 115px;
-  margin-left: 400px;
+  width: 467px;
+  height: 123px;
+  position: absolute;
+  left: 700px;
 }
 
 .hunter .arm {
   background: #e2d1a2;
-  rotate: 235deg;
+  rotate: 230deg;
+  width: 260px;
 }
 
 .hunter .hand {
+  width: 125px;
+  height: 110px;
   background: #e2d1a2;
   position: absolute;
-  left: 685px;
-  bottom: 120px;
+  left: -75px;
+  bottom: 175px;
+  border-radius: 30% 30%;
   animation: wave-2 5s alternate 3s infinite;
 }
 
@@ -282,29 +270,29 @@ body {
 .hunter .index {
   height: 112px;
   background: #e2d1a2;
-  left: 122px;
+  left: 135px;
   bottom: 40px;
 }
 
 .hunter .middle {
-  height: 125px;
+  height: 130px;
   background: #e2d1a2;
   left: 140px;
-  bottom: 6px;
+  bottom: 3px;
 }
 
 .hunter .ring {
   height: 100px;
   background: #e2d1a2;
-  left: 135px;
+  left: 145px;
   bottom: -9px;
 }
 
 .hunter .pinky {
   height: 90px;
   background: #e2d1a2;
-  left: 110px;
-  bottom: -30px;
+  left: 118px;
+  bottom: -34px;
 }
 
 .tray {
@@ -335,7 +323,7 @@ body {
   background: grey;
   position: absolute;
   bottom: 40px;
-  left: 58px;
+  left: 60px;
 }
 
 .joint {
@@ -484,7 +472,7 @@ body {
     filter: hue-rotate(-30deg);
   }
   75% {
-    filter: hue-rotate(-46deg);
+    filter: hue-rotate(-45deg);
   }
   100% {
     top: -250px;
@@ -497,10 +485,13 @@ body {
     background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.6) 10%, transparent 70%);
   }
   50% {
-    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.75) 20%, transparent 75%);
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.75) 15%, transparent 75%);
+  }
+  75% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.85) 25%, transparent 85%);
   }
   100% {
-    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.9) 30%, transparent 90%);
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.9) 30%, transparent 100%);
   }
 }
 
@@ -524,21 +515,19 @@ body {
 
 @keyframes wave-1 {
   0% {
-    transform: rotate(-50deg);
+    transform: rotate(-40deg);
   }
   100% {
     transform: rotate(-25deg);
-    border-bottom-left-radius: 50%;
   }
 }
 
 @keyframes wave-2 {
   0% {
-    transform: rotate(200deg);
+    transform: rotate(215deg);
   }
   100% {
-    transform: rotate(215deg);
-    border-bottom-right-radius: 40%;
+    transform: rotate(230deg);
   }
 }
 
