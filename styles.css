@@ -2,6 +2,8 @@ body {
   width: 2000px;
   height: 2150px;
   margin: 0 auto;
+  border: 150px groove brown;
+  padding: 25px;
 }
 
 .sky-wrapper {
@@ -16,6 +18,32 @@ body {
   height: 500px;
   background: linear-gradient(0deg, transparent 10%, orange 30%, violet);
   animation: sky-set 16s linear 3s infinite;
+}
+
+.bird-container {
+  display: flex;
+  width: 150px;
+  rotate: 90deg;
+  position: absolute;
+  animation: bird 16s linear 3s infinite;
+}
+
+.bird-wing {
+  width: 75px;
+  height: 0;
+  border: 15px solid rgb(226, 226, 226);
+  border-radius: 50%;
+  animation: fly-1 2s alternate 3s infinite;
+}
+.bird {
+  width: 50px;
+  height: 75px;
+  background: rgb(226, 226, 226);
+  border-radius: 50%;
+}
+
+.bird-wing:last-of-type {
+  animation: fly-2 2s alternate 3s infinite;
 }
 
 .sun {
@@ -45,7 +73,6 @@ body {
   bottom: 750px;
   left: 800px;
   height: 200px;
-  -webkit-box-reflect: right;
   opacity: 50%;
   animation: cloud-2 16s linear 2s infinite;
 }
@@ -53,7 +80,6 @@ body {
 .cloud:last-of-type {
   bottom: 900px;
   left: 1650px;
-  -webkit-box-reflect: right;
   opacity: 45%;
   animation: cloud-3 16s linear 3s infinite;
 }
@@ -417,10 +443,10 @@ body {
 
 @keyframes cloud-1 {
   0% {
-    left: 0;
+    left: -500px;
   }
   100% {
-    left: 250px;
+    left: 200px;
     opacity: 70%;
   }
 }
@@ -437,14 +463,39 @@ body {
 
 @keyframes cloud-3 {
   0% {
-    left: 1400px;
+    left: 2000px;
   }
   100% {
-    left: 800px;
+    left: 1500px;
     opacity: 80%;
   }
 }
-
+@keyframes bird {
+  0% {
+    top: 100px;
+    left: 2000px;
+  }
+  100% {
+    top: 100px;
+    left: 1200px;
+  }
+}
+@keyframes fly-1 {
+  0% {
+    rotate: 0deg
+  }
+  100% {
+    rotate: 45deg
+  }
+}
+@keyframes fly-2 {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -45deg;
+  }
+}
 @keyframes sunset {
   0% {
     top: 0;
