@@ -1,7 +1,7 @@
 body {
   width: 2000px;
   height: 2150px;
-  margin: 0 auto;
+  margin: auto;
   border: 150px groove brown;
   padding: 25px;
 }
@@ -133,13 +133,13 @@ body {
 .beach-wrapper {
   width: 2000px;
   height: 500px;
-  animation: tide 2s ease-in-out 5s infinite;
+  animation: tide 2s alternate 5s infinite;
 }
 
 .beach {
   width: inherit;
   height: 1000px;
-  background: linear-gradient(0deg, tan 80%, transparent 100%);
+  background: linear-gradient(0deg, tan 80%, #a69175 85%, transparent 100%);
   overflow: hidden;
 }
 
@@ -475,11 +475,11 @@ body {
 
 @keyframes bird {
   0% {
-    top: 100px;
+    top: 250px;
     left: 2000px;
   }
   100% {
-    top: 100px;
+    top: 250px;
     left: 1200px;
   }
 }
