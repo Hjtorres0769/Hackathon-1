@@ -35,6 +35,7 @@ body {
   border-radius: 50%;
   animation: fly-1 2s alternate 3s infinite;
 }
+
 .bird {
   width: 50px;
   height: 75px;
@@ -171,8 +172,9 @@ body {
   align-items: flex-end;
   width: 1000px;
   height: 500px;
+  border: 10px ridge rgba(131, 59, 59, 0.5);
   border-radius: 75px 75px 0 0;
-  background: #985d5d;
+  background: linear-gradient(#833b3b 10%, rgba(152, 93, 93, 0.5) 15%, rgba(152, 93, 93, 0.5) 15%, #833b3b 35%, rgba(152, 93, 93, 0.5) 60%, #833b3b 70%, rgba(152, 93, 93, 0.5) 90%, #833b3b);
   margin: 0 auto;
   position: relative;
   top: 500px;
@@ -470,6 +472,7 @@ body {
     opacity: 80%;
   }
 }
+
 @keyframes bird {
   0% {
     top: 100px;
@@ -480,14 +483,16 @@ body {
     left: 1200px;
   }
 }
+
 @keyframes fly-1 {
   0% {
-    rotate: 0deg
+    rotate: 0deg;
   }
   100% {
-    rotate: 45deg
+    rotate: 45deg;
   }
 }
+
 @keyframes fly-2 {
   0% {
     rotate: 0deg;
@@ -496,6 +501,7 @@ body {
     rotate: -45deg;
   }
 }
+
 @keyframes sunset {
   0% {
     top: 0;
