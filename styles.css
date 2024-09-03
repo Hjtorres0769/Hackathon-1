@@ -121,9 +121,9 @@ body {
   width: inherit;
   height: inherit;
   background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 25%, transparent 100%);
-  filter: hue-rotate(-16deg);
+  filter: hue-rotate(-15deg);
   overflow: hidden;
-  animation: ocean-set 16s linear 3s infinite;
+  animation: ocean 5s alternate 3s infinite;
 }
 
 .ocean .sun {
@@ -174,7 +174,16 @@ body {
   height: 500px;
   border: 10px ridge rgba(131, 59, 59, 0.5);
   border-radius: 75px 75px 0 0;
-  background: linear-gradient(#833b3b 10%, rgba(152, 93, 93, 0.5) 15%, rgba(152, 93, 93, 0.5) 15%, #833b3b 35%, rgba(152, 93, 93, 0.5) 60%, #833b3b 70%, rgba(152, 93, 93, 0.5) 90%, #833b3b);
+  background: linear-gradient(
+    #833b3b 10%,
+    rgba(152, 93, 93, 0.5) 15%,
+    rgba(152, 93, 93, 0.5) 15%,
+    #833b3b 35%,
+    rgba(152, 93, 93, 0.5) 60%,
+    #833b3b 70%,
+    rgba(152, 93, 93, 0.5) 90%,
+    #833b3b
+  );
   margin: 0 auto;
   position: relative;
   top: 500px;
@@ -385,7 +394,7 @@ body {
   width: 50px;
   height: 300px;
   position: absolute;
-  bottom: -58px;
+  bottom: 23px;
   left: 35px;
   display: grid;
   grid-template-rows: repeat(4, 30px);
@@ -562,11 +571,19 @@ body {
   }
 }
 
-@keyframes ocean-set {
+@keyframes ocean {
   0% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 25%, transparent 100%);
     filter: hue-rotate(0deg);
   }
+  50% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 45%, transparent 100%);
+  }
+  75% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 65%, transparent 100%);
+  }
   100% {
+    background: linear-gradient(transparent 0%, rgba(0, 100, 100, 0.5) 75%, transparent 100%);
     filter: hue-rotate(-45deg);
   }
 }
@@ -592,19 +609,19 @@ body {
 @keyframes smoke-1 {
   0% {
     left: 20px;
-    opacity: 10%;
+    opacity: 40%;
     border-radius: 50% 100%;
   }
   100% {
     left: 0;
-    opacity: 40%;
+    opacity: 60%;
     border-radius: 50% 0%;
   }
 }
 
 @keyframes smoke-2 {
   0% {
-    opacity: 30%;
+    opacity: 40%;
     border-radius: 50% 1000%;
   }
   100% {
